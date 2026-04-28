@@ -1,4 +1,5 @@
 import streamlit as st
+
 st.markdown(
     """
     <style>
@@ -13,7 +14,14 @@ st.markdown(
 
 st.title("My First Streamlit App")
 
-if st.button("Pulsa aquí"):
-    st.write("Hola 👋")
+# NAV
+pagina = st.sidebar.selectbox("NAME APP", ["Inicio", "Sobre mí"])
+
+if pagina == "Inicio":
+    if st.button("Pulsa aquí"):
+        st.write("Hola 👋")
+
+elif pagina == "Sobre mí":
+    st.write("Esta es otra sección de la app")
 
 st.write("Hello E4ABD, world.")
